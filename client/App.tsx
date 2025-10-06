@@ -25,6 +25,7 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminSubmissions from "./pages/admin/AdminSubmissions";
 import AdminNewToday from "./pages/admin/AdminNewToday";
 import AdminActiveAdmins from "./pages/admin/AdminActiveAdmins";
+import AdminChatbotSessions from "./pages/admin/AdminChatbotSessions";
 import AdminTeam from "./pages/admin/AdminTeam";
 import AdminSignup from "./pages/admin/AdminSignup";
 import AdminAuthLayout from "./components/admin/AdminAuthLayout";
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="recent" element={<AdminSubmissions />} />
             <Route path="new-today" element={<AdminNewToday />} />
             <Route path="active-admins" element={<AdminActiveAdmins />} />
+            <Route path="chatbot-sessions" element={<AdminChatbotSessions />} />
             <Route path="team" element={<AdminTeam />} />
           </Route>
         </Routes>

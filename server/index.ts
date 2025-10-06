@@ -2,6 +2,13 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import {
+  appendChatbotMessage,
+  createChatbotSession,
+  getChatbotSession,
+  listChatbotSessions,
+  updateChatbotSession,
+} from "./routes/chatbot-sessions";
 
 export function createServer() {
   const app = express();
@@ -87,6 +94,13 @@ export function createServer() {
       res.status(502).json({ detail: "Failed to reach admin backend" });
     }
   });
+
+  // Chatbot session routes
+  app.get("/api/chatbot-sessions", listChatbotSessions);
+  app.get("/api/chatbot-sessions/:id", getChatbotSession);
+  app.post("/api/chatbot-sessions", createChatbotSession);
+  app.post("/api/chatbot-sessions/:id/messages", appendChatbotMessage);
+  app.patch("/api/chatbot-sessions/:id", updateChatbotSession);
 
   // Example API routes
   app.get("/api/ping", (_req, res) => {

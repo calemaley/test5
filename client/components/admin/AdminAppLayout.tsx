@@ -5,6 +5,7 @@ import {
   LayoutDashboard,
   LogOut,
   Menu,
+  MessageSquare,
   ShieldCheck,
   X,
   Users,
@@ -37,6 +38,11 @@ const NAV_LINKS: Array<{ to: string; label: string; icon: LucideIcon }> = [
     to: "/admin-rank/dashboard/active-admins",
     label: "Active admins",
     icon: Users,
+  },
+  {
+    to: "/admin-rank/dashboard/chatbot-sessions",
+    label: "Chatbot sessions",
+    icon: MessageSquare,
   },
 ];
 
